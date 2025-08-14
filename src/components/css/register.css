@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #3e2f2f,
+    #a97155
+  ); /* Keeping the original gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Darker input fields */
+.form-control {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  border: 1px solid #444; /* Darker border */
+}
+
+.form-control:focus {
+  background-color: #444; /* Slightly darker on focus */
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue focus shadow */
+}
+
+.form-label {
+  color: #ccc; /* Light text for labels */
+}

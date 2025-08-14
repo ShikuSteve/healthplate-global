@@ -1,0 +1,132 @@
+.circular-auth-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #3e2f2f,
+    #a97155
+  ); /* Keeping the original gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.circle-center-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px; /* Slightly larger than .form-box */
+  height: 500px;
+  transform: translate(-50%, -50%);
+  background-color: #543e35fa; /* Match background color */
+  border-radius: 50%;
+  z-index: 1; /* Make sure it's above .circle-ring, but below .form-box */
+}
+
+.circle-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 580px;
+  height: 580px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(
+    #d4a317 0deg,
+    transparent 90deg,
+    #000 360deg
+  ); /* Adjusted to mustard yellow for a food-related color */
+  animation: rotateRing 2s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.form-box {
+  position: relative;
+  background-color: transparent;
+  color: #f7f3e2;
+  padding: 0;
+  border-radius: 0;
+  width: 360px;
+  z-index: 2;
+  text-align: center;
+  box-shadow: none;
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.floating-label label {
+  display: block;
+  margin-bottom: 6px;
+  color: #a8754d; /* Warm, caramel color */
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.floating-label input {
+  background-color: transparent;
+  border: 1px solid #292620; /* Full border */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: none;
+  outline: none;
+  caret-color: #d4a317; /* Match your mustard yellow or a softer tone */
+
+  /* color: rgba(255, 255, 255, 0.8); Softer white with 80% opacity */
+  padding: 8px 5px;
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #a8754d; /* Caramel-like label color */
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.floating-label input:focus + label,
+.floating-label input:valid + label {
+  top: -12px;
+  font-size: 0.75em;
+  color: #d4a317; /* Mustard yellow */
+}
+
+button.btn-info {
+  background-color: #d4a317; /* Mustard yellow */
+  border: none;
+  color: #2f1f1f; /* Dark brown text */
+  border-radius: 30px;
+}
+
+.toggle-link span {
+  display: block;
+  margin-bottom: 5px;
+}
+/* Inside register.css or your main stylesheet */
+.custom-toggle-btn {
+  color: #a3a9d1; /* Default theme color */
+  text-decoration: none; /* Optional: remove underline */
+}
+
+.custom-toggle-btn:hover,
+.custom-toggle-btn:focus {
+  color: #332624; /* Your preferred hover color */
+  text-decoration: none;
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

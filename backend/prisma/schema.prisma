@@ -1,0 +1,69 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ActivityLevel{
+  Sedentary
+  LightlyActive
+  ModeratelyActive
+  VeryActive
+
+}
+
+enum Gender {
+  female
+  male
+}
+
+
+
+model User {
+  id                  Int            @id @default(autoincrement())
+  uid                 String         @unique @default(uuid())
+  fullName            String
+  email               String         @unique
+  password            String
+  imageUrl            String?
+  height Float?
+  weight Float?
+  age Int?
+  gender Gender?
+  activityLevel ActivityLevel?
+  phoneNumber String?
+  country String?
+  city String?
+
+  healthConditions    String[]
+  dietaryRestrictions String[]
+  refreshTokens       RefreshToken[]
+
+  Bookmark Bookmark[]
+}
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  userId    Int
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  revoked   Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+}
+
+
+model Bookmark{
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId],references:[id])
+  userId Int
+  recipeUri Int
+  createdAt DateTime @default(now())
+  @@unique([userId,recipeUri])
+}

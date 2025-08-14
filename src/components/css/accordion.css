@@ -1,0 +1,73 @@
+/* FAQ Section Styling */
+
+.faq-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faq-accordion .accordion-item {
+  border-radius: 15px;
+  overflow: visible;
+  margin-bottom: 10px;
+  /* width: 80vw; */
+  /* max-width: 800px; */
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  text-align: center; /* Centers all text inside */
+}
+
+@media (max-width: 576px) {
+  .faq-accordion .accordion-item {
+    width: 90vw; /* almost full width on small screens */
+    max-width: 350px; /* limit max width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* .faq-accordion .accordion-item {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left center; /* <-- add this */
+/* } */
+/* */
+/* .faq-accordion .accordion-item:hover {
+  transform: scale(1.01);
+  z-index: 2;
+  position: relative;
+} */
+*/
+
+/* Header background - deep warm brown */
+.faq-accordion .accordion-header {
+  background: #f5e5d8;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Button background (collapsed) - medium copper */
+.faq-accordion .accordion-button {
+  background: #6e4b3a;
+  color: #fff;
+}
+
+/* Button background (expanded) - matching gradient stop */
+.faq-accordion .accordion-button:not(.collapsed) {
+  background: #a97155;
+  color: #fff;
+}
+
+/* Body background - light warm beige */
+.faq-accordion .accordion-body {
+  background: #f5e5d8;
+  color: #3e2f2f;
+  border-radius: 0 0 10px 10px;
+  padding: 15px;
+  align-self: center;
+}

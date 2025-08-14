@@ -1,0 +1,75 @@
+/* Style the search input */
+.react-tel-input .search input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Lighter border to match the dark theme */
+  background-color: #333 !important; /* Darker background */
+  color: #fff !important; /* White text to contrast with dark background */
+  font-size: 14px; /* Adjust the font size if needed */
+}
+
+/* Change the search input text color when focused */
+.react-tel-input .search input:focus {
+  border-color: #007bff !important; /* Blue border when focused */
+  background-color: #444 !important; /* Darker background when focused */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add blue focus shadow */
+}
+
+/* Style the country list dropdown */
+.react-tel-input .country-list {
+  background-color: #333 !important; /* Dark background */
+  color: #fff !important; /* White text */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: add some shadow for better contrast */
+}
+
+/* Style individual country items in the dropdown */
+.react-tel-input .country-list .country {
+  background-color: #333 !important; /* Dark background */
+  color: #fff !important; /* White text */
+}
+
+/* Highlight country item on hover */
+.react-tel-input .country-list .country:hover {
+  background-color: #444 !important; /* Slightly lighter background on hover */
+}
+
+/* Style the input field */
+.react-tel-input .form-control {
+  background-color: #333; /* Dark background for the input */
+  color: #fff; /* White text color */
+  border: 1px solid #444; /* Darker border */
+}
+
+/* Style the search input */
+.react-tel-input .search {
+  background-color: #444; /* Dark background for the search input */
+  color: #fff; /* White text color */
+  border: 1px solid #555; /* Darker border */
+}
+
+/* Style the flag dropdown */
+.react-tel-input .flag-dropdown {
+  background-color: #333; /* Dark background for the flag dropdown */
+  color: #fff; /* White text color */
+  border: 1px solid #444; /* Darker border */
+}
+
+/* Change the selected flag color */
+.react-tel-input .selected-flag {
+  background-color: #333; /* Dark background for the selected flag */
+  color: #fff; /* White text color */
+}
+
+/* Customize the dropdown arrow */
+.react-tel-input .arrow {
+  color: #fff; /* White arrow */
+}
+
+/* Add hover effects if needed */
+.react-tel-input .form-control:focus {
+  border-color: #007bff; /* Change border color when focused */
+  background-color: #444; /* Darken background on focus */
+}

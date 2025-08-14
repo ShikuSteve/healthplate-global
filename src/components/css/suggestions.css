@@ -1,0 +1,13 @@
+@media (min-width: 576px) {
+  .recipe-card {
+    flex: 1 1 48%; /* two cards per row */
+    max-width: 48%;
+  }
+}
+
+@media (min-width: 768px) {
+  .recipe-card {
+    flex: 1 1 30%; /* three cards per row */
+    max-width: 30%;
+  }
+}

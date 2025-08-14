@@ -1,0 +1,80 @@
+/* Fullscreen modal overlay */
+.loader-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* dimmed background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Much larger loader */
+.loader {
+  position: relative;
+  width: 300px; /* Increased */
+  height: 300px;
+}
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loader-text {
+  font-size: 2rem; /* or 3rem if you want it even bigger */
+  color: #422307;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 144px; /* 48% of loader width */
+  height: 144px;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translate(-5px, -50%);
+  background: linear-gradient(to right, #fff 50%, #462116 50%) no-repeat;
+  background-size: 200% auto;
+  background-position: 100% 0;
+  animation: colorBallMoveX 1s linear infinite alternate;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: #411c11;
+}
+
+@keyframes colorBallMoveX {
+  0% {
+    background-position: 0% 0;
+    transform: translate(-45px, -50%);
+  }
+  15%,
+  25% {
+    background-position: 0% 0;
+    transform: translate(0px, -50%);
+  }
+  75%,
+  85% {
+    background-position: 100% 0;
+    transform: translate(150px, -50%);
+  }
+  100% {
+    background-position: 100% 0;
+    transform: translate(180px, -50%);
+  }
+}

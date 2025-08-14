@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Adjust the header */
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* Make sure the main content adjusts */
+  main {
+    padding: 10px;
+  }
+
+  /* Adjust your map-container or other sections */
+  .map-container {
+    flex-direction: column;
+  }
+
+  /* Reduce font sizes if needed */
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: 90%;
+  }
+}
